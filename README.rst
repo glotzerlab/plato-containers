@@ -1,6 +1,11 @@
 docker-opengl
 =============
-A docker image that supports rendering graphical applications, including OpenGL apps.
+
+A docker image that supports rendering graphical applications,
+including OpenGL apps. This is an adaptation of the `docker-opengl
+project <https://github.com/thewtex/docker-opengl>`_, with an updated
+base, specialized for the `plato
+<https://bitbucket.org/glotzer/plato>`_ project.
 
 .. image:: https://circleci.com/gh/thewtex/docker-opengl.svg?style=svg
     :target: https://circleci.com/gh/thewtex/docker-opengl
