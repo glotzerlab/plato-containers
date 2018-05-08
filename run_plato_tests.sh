@@ -11,4 +11,5 @@ cd plato
 python3 -m pip install --no-deps --user .
 python3 -m pip install vispy pyglet --user
 cd test
-python3 -m nose
+mkdir -p /tmp/test_results/plato
+python3 -m nose --with-xunit --xunit-file=/tmp/test_results/plato/results.xml
