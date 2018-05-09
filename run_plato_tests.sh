@@ -6,9 +6,10 @@ mkdir -p "${PLATO_TEST_ARTIFACT_DIR}"
 
 git clone https://bitbucket.org/glotzer/plato plato
 cd plato
+git checkout ${CIRCLE_SHA1}
 
 # use global numpy/scipy
-python3 -m pip install --no-deps --user .
+python3 -m pip install --no-deps --user rowan .
 python3 -m pip install vispy pyglet --user
 cd test
 mkdir -p /tmp/test_results/plato
