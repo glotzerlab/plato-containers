@@ -1,0 +1,8 @@
+openbox &
+tint2 &
+
+xterm -maximized &
+
+if [ ! -z "${TARGET}" ]; then
+    xterm -e ${TARGET}
+fi

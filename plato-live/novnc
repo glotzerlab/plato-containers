@@ -1,0 +1,10 @@
+#! /usr/bin/env sh
+
+export TARGET="$*"
+/opt/TurboVNC/bin/vncserver :0 -securitytypes TLSNone,X509None,None \
+    -geometry 1920x1080 -rfbport 5900 -localhost -xstartup ~/.xstartup
+VNC_PID=$!
+
+/opt/noVNC/utils/launch.sh --listen 5400 --vnc localhost:5900 &
+
+wait ${VNC_PID}
