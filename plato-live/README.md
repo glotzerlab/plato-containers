@@ -20,9 +20,9 @@ although no suitable demo programs are included in this base image.
 ```
 # Run VNC server to access it on port 5900 in the host using
 # a standalone VNC client
-docker run -p 5900:5900 --rm mspells:plato-live:latest novnc
+docker run -p 5900:5900 --rm mspells/plato-live:latest novnc
 # Use noVNC on port 5400 and expose the host working directory in ~/work
-docker run -p 5400:5400 --rm --mount type=bind,dst=/home/user/work,src="$(pwd)" mspells:plato-live:latest novnc
+docker run -p 5400:5400 --rm --mount type=bind,dst=/home/user/work,src="$(pwd)" mspells/plato-live:latest novnc
 ```
 
 ## Notebook server: `notebook`
@@ -32,5 +32,5 @@ integration set up. It can be accessed within the image on port 8888.
 
 ```
 # Run the notebook server, exposing the host current working directory in ~/work
-docker run -p 8888:8888 --rm --mount type=bind,dst=/home/user/work,src="$(pwd)" mspells:plato-live:latest notebook
+docker run -p 8888:8888 --rm --mount type=bind,dst=/home/user/work,src="$(pwd)" mspells/plato-live:latest notebook
 ```
