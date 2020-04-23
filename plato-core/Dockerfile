@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:buster-slim
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -13,6 +13,7 @@ RUN apt-get update && \
         povray \
         python3-dev \
         python3-numpy \
+        python3-pybind11 \
         python3-scipy \
         python3-matplotlib \
         python3-venv \
@@ -26,9 +27,15 @@ RUN apt-get update && \
     mkdir embree-3.2.3/build && \
     cd embree-3.2.3/build && \
     cmake .. -DEMBREE_ISPC_SUPPORT=off -DEMBREE_TUTORIALS=off -DCMAKE_INSTALL_PREFIX=/usr && \
-    make install && \
+    make -j$(nproc) install && \
     cd ../.. && \
     rm -rf get-pip.py embree-3.2.3 v3.2.3.tar.gz && \
     apt-get -y clean
 
-LABEL maintainer="mspells@umich.edu"
+LABEL maintainer="mspells@umich.edu" \
+    org.opencontainers.image.authors="Matthew Spellings <mspells@umich.edu>" \
+    org.opencontainers.image.description="Core infrastructure to run plato unit tests on CircleCI." \
+    org.opencontainers.image.documentation="https://github.com/glotzerlab/plato-containers" \
+    org.opencontainers.image.source="https://github.com/glotzerlab/plato-containers" \
+    org.opencontainers.image.title="Plato-core" \
+    org.opencontainers.image.url="https://github.com/glotzerlab/plato-containers"
