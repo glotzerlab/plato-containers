@@ -78,6 +78,7 @@ RUN python -m pip install --no-cache-dir \
         vispy \
         plato-draw \
         pyglet \
+        pyopengl \
         pythreejs \
         pyside2 \
         qt.py \
