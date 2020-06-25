@@ -76,7 +76,7 @@ RUN python3 -m venv --system-site-packages ${venv}
 RUN python -m pip install --no-cache-dir \
         jupyter \
         vispy \
-        plato-draw \
+        plato-draw==1.11.0 \
         pyglet \
         pyopengl \
         pythreejs \
