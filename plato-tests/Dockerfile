@@ -1,6 +1,6 @@
 FROM mspells/plato-core
 
-ENV fresnel_ver=fresnel-v0.12.0
+ENV fresnel_ver=fresnel-v0.13.2
 
 RUN pip3 install pyglet vispy pythreejs jupyter nose && \
     jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
