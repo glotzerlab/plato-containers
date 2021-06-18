@@ -39,7 +39,7 @@ RUN wget https://github.com/embree/embree/archive/v${embree_ver}.tar.gz && \
     make -j$(nproc) install && \
     cd ../.. && \
     rm -rf embree-${embree_ver} v${embree_ver}.tar.gz
-ENV fresnel_ver=fresnel-v0.12.0
+ENV fresnel_ver=fresnel-v0.13.2
 RUN wget https://glotzerlab.engin.umich.edu/Downloads/fresnel/${fresnel_ver}.tar.gz && \
     tar xf ${fresnel_ver}.tar.gz && \
     mkdir ${fresnel_ver}/build && \
