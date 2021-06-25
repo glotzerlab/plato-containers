@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:testing-slim
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -10,6 +10,14 @@ RUN apt-get update && \
         libgl1-mesa-dri \
         libtbb-dev \
         libxkbcommon-x11-0 \
+        libxcb-icccm4 \
+        libxcb-image0 \
+        libxcb-keysyms1 \
+        libxcb-util1 \
+        libxcb-randr0 \
+        libxcb-render-util0 \
+        libxcb-xinerama0 \
+        libxcb-xfixes0 \
         openbox \
         pkg-config \
         povray \
@@ -79,8 +87,8 @@ RUN python -m pip install --no-cache-dir \
         plato-draw \
         pyglet \
         pyopengl \
-        pythreejs \
         pyside2 \
+        pythreejs \
         qt.py \
         && \
     jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
